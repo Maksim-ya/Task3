@@ -1,3 +1,4 @@
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +10,7 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(value = Parameterized.class)
-public class ConvertCtoFTest {
+public class ConvertCtoKTest {
 
     TemperatureConverter tc;
 
@@ -22,10 +23,9 @@ public class ConvertCtoFTest {
     public static Collection<Object[]> getTestData() {
         return Arrays.asList(new Object[][]{
 
-                { 32,0},
-                { 104, 40},
-                { 212, 100},
-                {56, 13.333},
+                { 273.2,0},
+                { 313.2, 40},
+                { 373.2, 100},
         });
     }
 
@@ -38,7 +38,7 @@ public class ConvertCtoFTest {
 
     @Test
     public void convertFtoC() {
-        assertEquals(expected, tc.convertCtoF(value), 3);
+        assertEquals(expected, tc.convertCtoK(value), 3);
 
     }
 }
